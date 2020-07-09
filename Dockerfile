@@ -22,7 +22,8 @@ EXPOSE 80 443
 # copiar arquivos do src pra dentro do container
 COPY ./srcs/ /tmp/
 
-RUN bash server-config.sh
+RUN bash /tmp/server-config.sh
 
 #comando que é executado repetidamente para manter o container aberto
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["bash", "/tmp/services.sh"]
+#testinho

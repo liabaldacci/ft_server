@@ -1,3 +1,6 @@
+# entra no diretorio aonde estão os arquivos
+cd /tmp
+
 # Cria a pasta localhost que sera o diretorio onde os arquivos serao salvos
 mkdir /var/www/localhost
 
@@ -24,11 +27,3 @@ cp -pr ./nginx.conf /etc/nginx/sites-available/default
 
 # conceder permissões totais ao usuario www-data
 chown -R www-data:www-data /var/www/localhost/phpmyadmin
-
-# iniciar o MySQL, Nginx e PHP
-/etc/init.d/nginx start
-/etc/init.d/mysql start
-/etc/init.d/php7.3-fpm start
-
-# criar base de dados
-bash database-config.sh
