@@ -17,5 +17,7 @@ RUN apt-get update && \
 	php-gd php-intl php-soap php-xml php-xmlrpc php-zip
 
 #abrir ports 443 e 80
-EXPOSE 443
-EXPOSE 80
+EXPOSE 80 443
+
+#comando que é executado repetidamente para manter o container aberto
+ENTRYPOINT ["tail", "-f", "/dev/null"]
