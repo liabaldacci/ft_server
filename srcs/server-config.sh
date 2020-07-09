@@ -24,3 +24,6 @@ cp -pr ./nginx.conf /etc/nginx/sites-available/default
 
 # conceder permissões totais ao usuario www-data
 chown -R www-data:www-data /var/www/localhost/phpmyadmin
+
+# criar base de dados
+bash database-config.sh
