@@ -27,3 +27,8 @@ cp -pr ./nginx.conf /etc/nginx/sites-available/default
 
 # conceder permissões totais ao usuario www-data
 chown -R www-data:www-data /var/www/localhost/phpmyadmin
+
+# gerar o certificado SSL e sua chave de criptografia em seus respectivos arquivos
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+	-subj '/C=BR/ST=SP/L=SP/O=42SP/CN=gadoglio' \
+	-keyout /etc/ssl/certs/ssl.key -out /etc/ssl/certs/ssl.crt
